@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.scheduled;
+package com.harvestasya.tools.symbol.task;
 
 import org.springframework.stereotype.Component;
 

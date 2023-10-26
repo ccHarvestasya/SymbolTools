@@ -1,8 +1,8 @@
-package com.harvestasya.tools.symbol.repository;
+package com.harvestasya.tools.symbol.domain.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.harvestasya.tools.symbol.model.FinalizedBlocks;
+import com.harvestasya.tools.symbol.domain.model.FinalizedBlocks;
 
 public interface  FinalizedBlocksRepository extends MongoRepository<FinalizedBlocks, String> {
 

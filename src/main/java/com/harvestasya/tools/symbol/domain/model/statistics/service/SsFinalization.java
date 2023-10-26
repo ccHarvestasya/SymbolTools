@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.model.statistics.service;
+package com.harvestasya.tools.symbol.domain.model.statistics.service;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import lombok.Data;
  * Statistics-Service のファイナライゼーションを管理
  */
 @Data
-public class Finalization {
+public class SsFinalization {
 	/**
 	 * ファイナライズブロック高
 	 */

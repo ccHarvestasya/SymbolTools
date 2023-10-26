@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.model;
+package com.harvestasya.tools.symbol.domain.model;
 
 import java.util.Map;
 

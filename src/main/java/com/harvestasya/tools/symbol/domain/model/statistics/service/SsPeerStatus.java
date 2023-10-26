@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.model.statistics.service;
+package com.harvestasya.tools.symbol.domain.model.statistics.service;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import lombok.Data;
  * Statistics-Service のピアステータスを管理
  */
 @Data
-public class PeerStatus {
+public class SsPeerStatus {
 	private Boolean isAvailable;
 	private Long lastStatusCheck;
 }

@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.model.statistics.service;
+package com.harvestasya.tools.symbol.domain.model.statistics.service;
 
 import java.util.Date;
 
@@ -10,11 +10,11 @@ import lombok.Data;
  * Statistics-Service のノード情報を管理
  */
 @Data
-public class NodeInfo {
+public class SsNodeInfo {
 	/**
 	 * ネットワークバージョン
 	 */
-	private String version;
+	private Integer version;
 
 	/**
 	 * パブリックキー
@@ -39,7 +39,7 @@ public class NodeInfo {
 	/**
 	 * ネットワーク識別子
 	 */
-	private String networkIdentifier;
+	private Integer networkIdentifier;
 
 	/**
 	 * ホスト名
@@ -60,10 +60,10 @@ public class NodeInfo {
 	/**
 	 * Peer ステータス
 	 */
-	private PeerStatus peerStatus;
+	private SsPeerStatus peerStatus;
 
 	/**
 	 * Api ステータス
 	 */
-	private ApiStatus apiStatus;
+	private SsApiStatus apiStatus;
 }

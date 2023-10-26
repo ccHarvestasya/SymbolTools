@@ -10,9 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.harvestasya.tools.symbol.model.FinalizedBlocks;
-import com.harvestasya.tools.symbol.model.statistics.service.NodeInfo;
-import com.harvestasya.tools.symbol.repository.FinalizedBlocksRepository;
+import com.harvestasya.tools.symbol.domain.model.FinalizedBlocks;
+import com.harvestasya.tools.symbol.domain.model.statistics.service.SsNodeInfo;
+import com.harvestasya.tools.symbol.domain.repository.FinalizedBlocksRepository;
 
 @SpringBootApplication
 @EnableScheduling
@@ -49,8 +49,8 @@ public class SymbolToolsApplication {
 
 		System.out.println("URL:" + URL);
 		RestTemplate restTemplate = new RestTemplate();
-		NodeInfo[] nodeInfos = restTemplate.getForObject(URL, NodeInfo[].class);
-		for (NodeInfo nodeInfo : nodeInfos) {
+		SsNodeInfo[] nodeInfos = restTemplate.getForObject(URL, SsNodeInfo[].class);
+		for (SsNodeInfo nodeInfo : nodeInfos) {
 			System.out.println(nodeInfo.getVersion());
 			System.out.println(nodeInfo.getLastAvailable());
 			if (nodeInfo.getPeerStatus() != null) {

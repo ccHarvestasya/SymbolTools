@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.model.statistics.service;
+package com.harvestasya.tools.symbol.domain.model.statistics.service;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import lombok.Data;
  * Statistics-Service のApiステータスを管理
  */
 @Data
-public class ApiStatus {
+public class SsApiStatus {
 	/**
 	 * RESTゲートウェイURL
 	 */
@@ -35,7 +35,7 @@ public class ApiStatus {
 	/**
 	 * WebSocketステータス
 	 */
-	private WebSocketStatus webSocket;
+	private SsWebSocketStatus webSocket;
 
 	/**
 	 * ノードパブリックキー
@@ -50,12 +50,12 @@ public class ApiStatus {
 	/**
 	 * ファイナライゼーション
 	 */
-	private Finalization finalization;
+	private SsFinalization finalization;
 
 	/**
 	 * ノードステータス
 	 */
-	private NodeStatus nodeStatus;
+	private SsNodeStatus nodeStatus;
 
 	/**
 	 * RESTバージョン

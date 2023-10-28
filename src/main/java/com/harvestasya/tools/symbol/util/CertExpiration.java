@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol;
+package com.harvestasya.tools.symbol.util;
 
 import java.security.KeyStore;
 import java.security.cert.CertificateException;
@@ -26,7 +26,7 @@ public class CertExpiration {
 		}
 	}
 
-	private Date getCertExpiration(String host, Integer port) throws Exception {
+	public Date getCertExpiration(String host, Integer port) throws Exception {
 		SSLContext context = SSLContext.getInstance("TLS");
 		TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
 		tmf.init((KeyStore) null);
@@ -35,12 +35,11 @@ public class CertExpiration {
 		context.init(null, new TrustManager[] { tm }, null);
 		SSLSocketFactory factory = context.getSocketFactory();
 		SSLSocket socket = (SSLSocket) factory.createSocket(host, port);
-		socket.setSoTimeout(3000);
+		socket.setSoTimeout(2000);
 
 		Date notAfter = null;
 		try {
 			socket.startHandshake();
-			socket.close();
 
 			X509Certificate[] chain = tm.chain;
 			X509Certificate cert = chain[0];
@@ -48,6 +47,8 @@ public class CertExpiration {
 			notAfter = cert.getNotAfter();
 		} catch (SSLException e) {
 			e.printStackTrace();
+		} finally {
+			socket.close();
 		}
 
 		return notAfter;

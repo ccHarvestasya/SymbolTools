@@ -4,8 +4,6 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -17,31 +15,10 @@ import lombok.Data;
 @Data
 @Table(name = "node_info")
 public class NodeInfo {
-//	/**
-//	 * 登録日時
-//	 */
-//	@Column(name = "created_at")
-//	@GeneratedValue(strategy = GenerationType.AUTO)
-//	private Date createdAt;
-//
-//	/**
-//	 * 更新日時
-//	 */
-//	@Column(name = "updated_at")
-//	@GeneratedValue(strategy = GenerationType.AUTO)
-//	private Date updatedAt;
-
-	/**
-	 * ID
-	 */
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
 	/**
 	 * パブリックキー
 	 */
+	@Id
 	@Column(name = "public_key")
 	private String publicKey;
 
@@ -70,7 +47,7 @@ public class NodeInfo {
 	private Integer networkIdentifier;
 
 	/**
-	 * ジェネレーションハッシュ
+	 * ジェネレーションハッシュシード
 	 */
 	@Column(name = "network_generation_hash_seed")
 	private String networkGenerationHashSeed;
@@ -92,4 +69,112 @@ public class NodeInfo {
 	 */
 	@Column(name = "last_available")
 	private Date lastAvailable;
+
+	/**
+	 * ピア利用可否
+	 */
+	@Column(name = "is_available_peer")
+	private Boolean isAvailablePeer;
+
+	/**
+	 * ピア最終利用可能日時
+	 */
+	@Column(name = "last_status_check_peer")
+	private Date lastStatusCheckPeer;
+
+	/**
+	 * RESTゲートウェイURL
+	 */
+	@Column(name = "rest_gateway_url")
+	private String restGatewayUrl;
+
+	/**
+	 * Api利用可否
+	 */
+	@Column(name = "is_available_api")
+	private Boolean isAvailableApi;
+
+	/**
+	 * Https利用可否
+	 */
+	@Column(name = "is_https_enabled")
+	private Boolean isHttpsEnabled;
+
+	/**
+	 * Api最終利用可能日時
+	 */
+	@Column(name = "last_status_check_api")
+	private Date lastStatusCheckApi;
+
+	/**
+	 * WebSocket利用可否
+	 */
+	@Column(name = "is_available_ws")
+	private Boolean isAvailableWs;
+
+	/**
+	 * SSL WebSocket利用可否
+	 */
+	@Column(name = "is_wss_enabled")
+	private Boolean isWssEnabled;
+
+	/**
+	 * WebSocket URL
+	 */
+	@Column(name = "web_socket_url")
+	private String webSocketUrl;
+
+	/**
+	 * ノードパブリックキー
+	 */
+	@Column(name = "node_public_key")
+	private String nodePublicKey;
+
+	/**
+	 * ブロック高
+	 */
+	@Column(name = "chain_height")
+	private Long chainHeight;
+
+	/**
+	 * ファイナライズブロック高
+	 */
+	@Column(name = "finalization_height")
+	private Long finalizationHeight;
+
+	/**
+	 * ファイナライズエポック
+	 */
+	@Column(name = "finalization_epoch")
+	private Long finalizationEpoch;
+
+	/**
+	 * ファイナライズポイント
+	 */
+	@Column(name = "finalization_point")
+	private Long finalizationPoint;
+
+	/**
+	 * ファイナライズハッシュ
+	 */
+	@Column(name = "finalization_hash")
+	private String finalizationHash;
+
+	/**
+	 * ApiNode利用可否
+	 */
+	@Column(name = "is_enabled_api_node")
+	private Boolean isEnabledApiNode;
+
+	/**
+	 * DB利用可否
+	 */
+	@Column(name = "is_enabled_db")
+	private Boolean isEnabledDb;
+
+	/**
+	 * RESTバージョン
+	 */
+	@Column(name = "rest_version")
+	private String restVersion;
 }

@@ -1,5 +1,9 @@
 package com.harvestasya.tools.symbol.domain.model.statistics.service;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 /**
@@ -7,6 +11,14 @@ import lombok.Data;
  */
 @Data
 public class SsPeerStatus {
+	/**
+	 * Peer 死活判定
+	 */
 	private Boolean isAvailable;
-	private Long lastStatusCheck;
+	
+	/**
+	 * 最終チェック日時
+	 */
+	@DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm:ss.SSSZ")
+	private Date lastStatusCheck;
 }

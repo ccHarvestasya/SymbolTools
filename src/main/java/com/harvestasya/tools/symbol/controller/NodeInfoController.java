@@ -11,11 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.harvestasya.tools.symbol.common.util.CertExpiration;
 import com.harvestasya.tools.symbol.domain.entity.CertInfo;
 import com.harvestasya.tools.symbol.domain.entity.NodeInfo;
 import com.harvestasya.tools.symbol.service.CertInfoService;
 import com.harvestasya.tools.symbol.service.NodeInfoService;
-import com.harvestasya.tools.symbol.util.CertExpiration;
 
 /**
  * ノード情報 Controller

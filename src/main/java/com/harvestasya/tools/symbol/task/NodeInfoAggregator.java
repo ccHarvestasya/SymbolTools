@@ -12,12 +12,12 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.harvestasya.tools.symbol.common.util.CertExpiration;
 import com.harvestasya.tools.symbol.domain.entity.CertInfo;
 import com.harvestasya.tools.symbol.domain.entity.NodeInfo;
 import com.harvestasya.tools.symbol.domain.model.statistics.service.SsNodeInfo;
 import com.harvestasya.tools.symbol.service.CertInfoService;
 import com.harvestasya.tools.symbol.service.NodeInfoService;
-import com.harvestasya.tools.symbol.util.CertExpiration;
 
 @Component
 public class NodeInfoAggregator {

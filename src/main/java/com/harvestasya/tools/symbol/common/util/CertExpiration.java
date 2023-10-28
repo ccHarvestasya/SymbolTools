@@ -1,4 +1,4 @@
-package com.harvestasya.tools.symbol.util;
+package com.harvestasya.tools.symbol.common.util;
 
 import java.security.KeyStore;
 import java.security.cert.CertificateException;
